@@ -1,11 +1,17 @@
-
+import Body from "./components/Body";
+import Header from "./components/Header";
 
 
 
 function App() {
   return (
-   <h1 className="font-bold text-green-800">Netflix GPT</h1>
+    <>
+   <Header />
+   <Body />
+   </ >
   );
 }
 
 export default App;
+
+

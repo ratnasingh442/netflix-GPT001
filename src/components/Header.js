@@ -44,7 +44,7 @@ const Header = () => {
     <div className='flex justify-between absolute w-screen px-8 py-4 bg-gradient-to-b from-black z-30'>
       <img  src={NETFLIX_LOGO} alt="logo" className='w-44'/>
 
-   {user&& <div className='m-4 flex'>
+   {user&& <div className='m-4 flex text-white'>
       <img src={USER_AVATAR} alt="logo"/>
 
       <button onClick={handleSignOut}>Sign Out</button>

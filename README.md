@@ -23,6 +23,10 @@
 - Update store
 - Embedded the trailer video
 - Custom hook to refactor
+- Build secondary component
+- Build Moviecard and scrollbar
+- TMDB image cdn url
+
 
 # Features
 - Sign In/Login

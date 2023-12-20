@@ -1,14 +1,37 @@
-import React from 'react';
-import {NETFLIX_LOGO} from './utils/constants';
+import React, { useEffect } from 'react'
+import {NETFLIX_LOGO, USER_AVATAR} from './utils/constants';
 import { auth } from './utils/firebase';
 import { signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import {onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { addUser, removeUser } from './utils/userSlice';
 
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch  = useDispatch()
+
   const user = useSelector(store=>store.user);
+  useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const {uid, email, displayName} = user;
+        dispatch(addUser({uid:uid, email:email, displayName:displayName}))
+        navigate("/browse");
+        
+
+      } else {
+        dispatch(removeUser());
+        navigate("/")
+        // User is signed out
+        // ...
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+  
   const handleSignOut = () =>{
     signOut(auth).then(() => {
       navigate("/");
@@ -22,7 +45,7 @@ const Header = () => {
       <img  src={NETFLIX_LOGO} alt="logo" className='w-44'/>
 
    {user&& <div className='m-4 flex'>
-      <img src="https://occ-0-4994-2186.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABXYofKdCJceEP7pdxcEZ9wt80GsxEyXIbnG_QM8znksNz3JexvRbDLr0_AcNKr2SJtT-MLr1eCOA-e7xlDHsx4Jmmsi5HL8.png?r=1d4" alt="logo"/>
+      <img src={USER_AVATAR} alt="logo"/>
 
       <button onClick={handleSignOut}>Sign Out</button>
     </div>}

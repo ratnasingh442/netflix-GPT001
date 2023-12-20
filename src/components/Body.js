@@ -9,22 +9,22 @@ import { addUser, removeUser } from './utils/userSlice';
 import Header from './Header';
 
 const Body = () => {
-  const dispatch  = useDispatch()
+  // const dispatch  = useDispatch()
 
-  useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const {uid, email, displayName} = user;
-        dispatch(addUser({uid:uid, email:email, displayName:displayName}))
+  // useEffect(()=>{
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       const {uid, email, displayName} = user;
+  //       dispatch(addUser({uid:uid, email:email, displayName:displayName}))
         
 
-      } else {
-        dispatch(removeUser());
-        // User is signed out
-        // ...
-      }
-    });
-  }, [])
+  //     } else {
+  //       dispatch(removeUser());
+  //       // User is signed out
+  //       // ...
+  //     }
+  //   });
+  // }, [])
     
     const appRouter = createBrowserRouter([
         {

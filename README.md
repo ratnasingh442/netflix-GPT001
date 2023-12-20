@@ -16,6 +16,13 @@
 - Implemented Sign Out
 - Update Profile
 - Fetch from TMDB Movies
+- Fixed bug redirect user
+- Unsubscribe to onAuthStateChanged
+- create movieSlice
+- Planning for main and secondary container
+- Update store
+- Embedded the trailer video
+- Custom hook to refactor
 
 # Features
 - Sign In/Login

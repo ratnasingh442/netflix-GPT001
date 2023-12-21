@@ -25,7 +25,6 @@ export const API_OPTIONS =  {
   {
     identifier:"spanish", name: "Spanish"
   }
-
-
-
 ]
+
+export const OPENAI_APIKEY = "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";

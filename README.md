@@ -26,7 +26,11 @@
 - Build secondary component
 - Build Moviecard and scrollbar
 - TMDB image cdn url
-
+- add custom hooks like usePopularMovies, etc
+- Build gpt search
+- GPT search page
+- GPT search bar
+- Multi language feature
 
 # Features
 - Sign In/Login

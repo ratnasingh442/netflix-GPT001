@@ -1,5 +1,7 @@
 # Netflix GPT
 
+URL:  https://netflixgpt-33df5.web.app
+
 -Create React App
 - Configured Tailwind
 - Header

@@ -33,6 +33,10 @@ URL:  https://netflixgpt-33df5.web.app
 - GPT search page
 - GPT search bar
 - Multi language feature
+- Added Carousel
+
+TODO: Make App responsive
+TODO: Use Formik in forms
 
 # Features
 - Sign In/Login
